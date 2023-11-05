@@ -1,5 +1,5 @@
 
 export function App() {
   console.log('✅')
-  return <div></div>
+  return <div>Work!</div>
 }
