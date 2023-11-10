@@ -3,18 +3,20 @@ import './PromiseConstructor';
 import './PromiseTest';
 
 const App = () => {
-    const [seconds, setSeconds] = useState<number>(0);
+    const [seconds, setSeconds] = useState<number>(10);
     const [isStarted, setIsStarted] = useState<boolean>(false);
 
     useEffect(() => {
         let intervalId: string | number | NodeJS.Timeout | undefined;
         if (isStarted) {
             intervalId = window.setInterval(() => {
-                setSeconds((prevState) => prevState + 1);
+                setSeconds((prevState) => prevState - 1);
             }, 1_000);
         }
         return () => {
+            if (seconds === 0)
             clearInterval(intervalId);
+            setIsStarted(false);
         }
     }, [isStarted]);
 
