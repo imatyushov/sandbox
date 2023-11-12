@@ -6,14 +6,14 @@ export const promise = new Promise<number>((resolve, reject) => {
 });
 
 
-promise
-    .then((resolve) => resolve * 2)
-    .then((resolve) => resolve * 2)
-    .catch((error) => {
-        console.error(error);
-        return 1_000;
-    })
-    .then(resolve => console.log(resolve))
+// promise
+//     .then((resolve) => resolve * 2)
+//     .then((resolve) => resolve * 2)
+//     .catch((error) => {
+//         console.error(error);
+//         return 1_000;
+//     })
+//     .then(resolve => console.log(resolve))
 
 
 export const firstPromise = new Promise<number>((res, rej) => {
